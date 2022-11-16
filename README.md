@@ -1,7 +1,12 @@
-# Vue 3 + Vite
+# Spotify API
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+In order to fetch API, it is required to have your clientId and secretId which have to replace the static value inside constasnts.js.
 
-## Recommended IDE Setup
+Step to Run:
+1. Replace your clientId and secretId in constasnts.js.
+2. npm install
+3. npm run dev
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Diagram
+Diagram link: https://drive.google.com/file/d/1AkK0OkgqiDzr6KaP62CVdg1kKNo2OKO1/view?usp=sharing
+![image](https://user-images.githubusercontent.com/25266573/202246584-029a6389-57cf-44e6-8beb-b234cc9cb911.png)
