@@ -11,7 +11,7 @@ const transformEmbed = computed(() => {
 <template>
     <div id="track">
          <div class="container">
-            <iframe class="frame" loading="lazy" :src="transformEmbed" allow="encrypted-media;autoplay; fullscreen" ></iframe>
+            <iframe class="frame" :src="transformEmbed" allow="encrypted-media;autoplay; fullscreen" ></iframe>
         </div>
     </div>
 </template>
