@@ -3,16 +3,15 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
   color-scheme: light dark;
   color: black;
-  background-color: #ffffff;
-
+  background-image: linear-gradient(to right top, #5a91e4, #788bde, #8f84d6, #a27ecb, #b178bf);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  height: -webkit-fill-available;
 }
 
 a {
@@ -40,8 +39,9 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 30px;
   line-height: 1.1;
+  color: black;
 }
 
 .flex {
@@ -56,18 +56,28 @@ h1 {
 .flex-row {
   display: flex;
   flex-direction: row;
-  gap: 20px
+  gap: 30px
 }
 
 .from-bottom {
   justify-content: end;
 }
 
+.header {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 13px;
+}
+
+.topic {
+  margin-bottom: 30px;
+}
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 40px;
   text-align: center;
 }
 
@@ -81,5 +91,17 @@ h1 {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@keyframes loadingColor {
+  0% {
+    background: #B9D1EB;
+  }
+  50% {
+    background: #E5BDF6;
+  }
+  100% {
+    background: #CFC7F8;
   }
 }

@@ -1,28 +1,33 @@
 <script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Spotify from './components/Spotify.vue'
+import {ref, onErrorCaptured} from 'vue';
+import Spotify from './components/Spotify.vue';
+import LazyLoadCard from './components/LazyLoadCard.vue';
+import AlbumDetail from './components/AlbumDetail.vue';
+import Error from './components/Error.vue'
+const error = ref('');
+
+onErrorCaptured((err) => {
+    error.value = err
+    return true
+});
+
 </script>
 
 <template>
+  <h1 class="flex topic">New Release Album</h1>
   <Suspense>
-    <Spotify class="async-component" />
+    <Spotify/>
     <template #fallback>
-      loading
+      <div class="flex-row" v-if="!error">
+        <div v-for="item in 5" v-bind:key="item">
+          <LazyLoadCard/>
+         </div>
+      </div>
+      <Error :error="error" v-else/>
     </template>
   </Suspense>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>

@@ -11,7 +11,7 @@ export async function getToken(clientId, clientSecret) {
     })
     
     if (!result.ok) {
-        throw new Error();
+        throw  new Error('Failed to get accessToken!!');
     }
     
     const data = await result.json();
@@ -30,9 +30,29 @@ export async function getNewRelease(token) {
       );
 
     if (!result.ok) {
-        throw new Error();
+        throw new Error('Failed to load new release album!!');
     }
 
     const data = await result.json();
     return data;
 }
+
+export async function getArtistInfo(token, id) {
+    const result = await fetch(
+        `${CONSTANTS.BASE_URL}/artists/${id}`,
+        {
+          method: "GET",
+          headers: { 
+            Authorization: "Bearer " + token
+         },
+        }
+      );
+
+    if (!result.ok) {
+        throw new Error('Failed to load artist information!!');
+    }
+
+    const data = await result.json();
+    return data;
+}
+
